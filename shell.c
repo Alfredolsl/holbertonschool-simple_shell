@@ -1,6 +1,10 @@
 #include "shell.h"
 
-int main (ac, **argv)
+/**
+ *
+ */
+
+int main(int ac, char **argv)
 {
 	char *prompt = "$ ";
 	char *lineptr;
