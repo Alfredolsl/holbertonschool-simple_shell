@@ -8,6 +8,7 @@ int main (ac, **argv)
 
 	printf("%s", prompt);
 	getline(&lineptr, &n, stdin);
+	printf("%s\n", lineptr);
 
 	free(lineptr);
 	return (0);
