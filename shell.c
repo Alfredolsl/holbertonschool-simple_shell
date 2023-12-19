@@ -1,6 +1,10 @@
 #include "shell.h"
 
-int main (ac, **argv)
+/**
+ *
+ */
+
+int main(int ac, char **argv)
 {
 	char *prompt = "$ ";
 	char *lineptr;
@@ -8,6 +12,7 @@ int main (ac, **argv)
 
 	printf("%s", prompt);
 	getline(&lineptr, &n, stdin);
+	printf("%s\n", lineptr);
 
 	free(lineptr);
 	return (0);
