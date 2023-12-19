@@ -1,7 +1,11 @@
 #include "shell.h"
 
 /**
+ * main - main code
+ * @ac: arg counter
+ * @argv: arg vector
  *
+ * Return: 0 if successful, otherwise 1
  */
 
 int main(int ac, char **argv)
@@ -10,10 +14,13 @@ int main(int ac, char **argv)
 	char *lineptr;
 	size_t n = 0;
 
-	printf("%s", prompt);
-	getline(&lineptr, &n, stdin);
-	printf("%s\n", lineptr);
+	while (1)
+	{
+		printf("%s", prompt);
+		getline(&lineptr, &n, stdin);
+		printf("%s\n", lineptr);
+		free(lineptr);
+	}
 
-	free(lineptr);
 	return (0);
 }
