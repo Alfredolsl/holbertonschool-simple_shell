@@ -1,2 +1,26 @@
-.TH SHELL
-Simple UNIX command interpreter
+SIMPLE SHELL (2) "20 December 2023" "Holberton School" "C - Simple Shell"
+
+NAME
+hsh - simple command line interpreter
+
+SYNOPSIS
+hsh [FILENAME]
+
+DESCRIPTION
+Simple command line interpeter that reads commands from a file or from the
+standard input and executes them.
+
+INVOCATION
+hsh can be invoked interactively and non-interactively.
+
+if hsh is invoked with standard input, it reads and executes received commands in order.
+
+if command line arguments are supplied upon invocation, hsh treats the first argument
+as a file to read from and execute commands.
+Supplied file should contain 1 command per line.
+
+SEE ALSO
+sh(1)
+
+AUTHOR
+Augusto Chi and Alfredo Lehman
