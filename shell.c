@@ -70,6 +70,8 @@ int main(int ac, char **argv)
 			}
 		}
 
+		execmd(argv);
+
 		printf("\n");
 	}
 

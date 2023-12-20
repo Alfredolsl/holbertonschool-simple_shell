@@ -9,4 +9,6 @@
 #include <unistd.h>
 #include <fcntl.h>
 
+void execmd(char **argv);
+
 #endif
