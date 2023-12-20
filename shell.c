@@ -8,7 +8,7 @@
  * Return: 0 if successful, otherwise -1
  */
 
-int main(char **argv)
+int main(int ac __attribute__((unused)), char **argv)
 {
 	char *prompt = "$ ";
 	char *lineptr = NULL, *lineptr_copy = NULL;
