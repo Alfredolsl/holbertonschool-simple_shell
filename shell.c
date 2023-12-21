@@ -17,15 +17,17 @@ int main(int ac __attribute__((unused)), char **argv)
 	ssize_t nchars_read;
 	const char *delim = " \n";
 	unsigned int token_count, i;
+	int interactive;
 
 	while (1)
 	{
 		token_count = 0;
+		interactive = is_interactive();
 
-		printf("%s", prompt);
-
+		if (interactive == 0)
+			printf("%s", prompt);
+		
 		nchars_read = getline(&lineptr, &n, stdin);
-
 		if (nchars_read == -1)
 		{
 			printf("Exiting shell....\n");
