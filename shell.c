@@ -23,6 +23,7 @@ int main(int ac __attribute__((unused)), char **argv)
 		token_count = 0;
 
 		printf("%s", prompt);
+
 		nchars_read = getline(&lineptr, &n, stdin);
 
 		lineptr_copy = malloc(sizeof(char) * nchars_read);
@@ -64,15 +65,16 @@ int main(int ac __attribute__((unused)), char **argv)
 			return (-1);
 		}
 
-		for (i = 0; i < token_count; i++)
+		if (execmd(argv) != 0)
 		{
-			if (argv[i] != NULL)
+			for (i = 0; i < token_count; i++)
 			{
-				printf("%s ", argv[i]);
+				if (argv[i] != NULL)
+				{
+					printf("%s ", argv[i]);
+				}
 			}
 		}
-
-		execmd(argv);
 		printf("\n");
 
 		for (i = 0; i < token_count; i++)

@@ -5,11 +5,12 @@
 #include <string.h>
 #include <stdlib.h>
 #include <sys/types.h>
+#include <sys/wait.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include <fcntl.h>
 
-void execmd(char **argv);
+int execmd(char **argv);
 char *get_location(char *command);
 
 #endif
