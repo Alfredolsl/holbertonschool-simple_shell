@@ -20,7 +20,7 @@ int execmd(char **argv)
 
 		if (actual_cmd == NULL)
 		{
-			fprintf(stderr, "Command not found: %s\n", command);
+			fprintf(stderr, "%s: No such file or directory\n", command);
 			return (1);
 		}
 
