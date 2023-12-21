@@ -12,5 +12,6 @@
 
 int execmd(char **argv);
 char *get_location(char *command);
+int is_interactive(void);
 
 #endif
