@@ -15,7 +15,16 @@ void execmd(char **argv)
 
 		actual_cmd = get_location(command);
 
+		if (actual_cmd == NULL)
+		{
+			fprintf(stderr, "Command not found: %s\n", command);
+			return;
+		}
+
 		if (execve(actual_cmd, argv, NULL) == -1)
+		{
 			perror("Error");
+			exit(EXIT_FAILURE);
+		}
 	}
 }

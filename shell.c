@@ -20,6 +20,8 @@ int main(int ac __attribute__((unused)), char **argv)
 
 	while (1)
 	{
+		token_count = 0;
+
 		printf("%s", prompt);
 		nchars_read = getline(&lineptr, &n, stdin);
 
@@ -47,7 +49,7 @@ int main(int ac __attribute__((unused)), char **argv)
 
 		for (i = 0; token != NULL; i++)
 		{
-			argv[i] = malloc(sizeof(char) * strlen(token));
+			argv[i] = malloc(sizeof(char) * (strlen(token)) + 1);
 			strcpy(argv[i], token);
 
 			token = strtok(NULL, delim);
@@ -71,8 +73,10 @@ int main(int ac __attribute__((unused)), char **argv)
 		}
 
 		execmd(argv);
-
 		printf("\n");
+
+		for (i = 0; i < token_count; i++)
+			free(argv[i]);
 	}
 
 	free(argv);

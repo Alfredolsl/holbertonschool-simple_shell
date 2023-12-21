@@ -2,7 +2,7 @@
 
 /**
  * get_location - gets file path location to execute command
- * @command - command to search its file path
+ * @command: command to search its file path
  *
  * Return: char pointer to the path of the command
  */
