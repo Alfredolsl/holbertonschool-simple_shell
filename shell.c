@@ -26,6 +26,13 @@ int main(int ac __attribute__((unused)), char **argv)
 
 		nchars_read = getline(&lineptr, &n, stdin);
 
+		if (nchars_read == -1)
+		{
+			printf("Exiting shell....\n");
+			free(lineptr);
+			return(-1);
+		}
+
 		lineptr_copy = malloc(sizeof(char) * (nchars_read + 1));
 		if (lineptr_copy == NULL)
 		{
@@ -57,13 +64,6 @@ int main(int ac __attribute__((unused)), char **argv)
 		}
 
 		argv[i] = NULL;
-
-		if (nchars_read == -1)
-		{
-			printf("Exiting shell...\n");
-			free(lineptr);
-			return (-1);
-		}
 
 		if (execmd(argv) != 0)
 		{
