@@ -16,7 +16,7 @@ int main(int ac __attribute__((unused)), char **argv)
 	size_t n = 0;
 	ssize_t nchars_read;
 	const char *delim = " \n";
-	unsigned int token_count, i;
+	unsigned int token_count = 0, i;
 
 	while (1)
 	{
