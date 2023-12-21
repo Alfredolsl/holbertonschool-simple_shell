@@ -26,7 +26,14 @@ int main(int ac __attribute__((unused)), char **argv)
 
 		nchars_read = getline(&lineptr, &n, stdin);
 
-		lineptr_copy = malloc(sizeof(char) * nchars_read);
+		if (nchars_read == -1)
+		{
+			printf("Exiting shell....\n");
+			free(lineptr);
+			return(-1);
+		}
+
+		lineptr_copy = malloc(sizeof(char) * (nchars_read + 1));
 		if (lineptr_copy == NULL)
 		{
 			perror("Error: memory could not be allocated");
@@ -58,13 +65,6 @@ int main(int ac __attribute__((unused)), char **argv)
 
 		argv[i] = NULL;
 
-		if (nchars_read == -1)
-		{
-			printf("Exiting shell...\n");
-			free(lineptr);
-			return (-1);
-		}
-
 		if (execmd(argv) != 0)
 		{
 			for (i = 0; i < token_count; i++)
@@ -74,8 +74,8 @@ int main(int ac __attribute__((unused)), char **argv)
 					printf("%s ", argv[i]);
 				}
 			}
+			printf("\n");
 		}
-		printf("\n");
 
 		for (i = 0; i < token_count; i++)
 			free(argv[i]);

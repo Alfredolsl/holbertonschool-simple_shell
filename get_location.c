@@ -43,10 +43,10 @@ char *get_location(char *command)
 				return (file_path);
 			}
 
-			free(file_path);
 			path_token = strtok(NULL, ":");
 		}
 		free(path_copy);
+		free(file_path);
 
 		return (NULL);
 	}
