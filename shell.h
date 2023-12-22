@@ -10,8 +10,10 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-int execmd(char **argv);
-char *get_location(char *command);
-int is_interactive(void);
+#define TOKEN_DELIMITER " \t\r\n\a\""
+extern char **environ;
+
+void interactive_mode(void);
+void noninteractive_mode(void);
 
 #endif
