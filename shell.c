@@ -30,7 +30,8 @@ int main(int ac __attribute__((unused)), char **argv)
 		nchars_read = getline(&lineptr, &n, stdin);
 		if (nchars_read == -1)
 		{
-			printf("\n");
+			if (interactive == 0)
+				printf("\n");
 			free(lineptr);
 			return(-1);
 		}
