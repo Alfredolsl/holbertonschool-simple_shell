@@ -15,5 +15,7 @@ extern char **environ;
 
 void interactive_mode(void);
 void noninteractive_mode(void);
+char *readline(void);
+char **splitline(char *line);
 
 #endif
