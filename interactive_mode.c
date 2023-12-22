@@ -10,8 +10,10 @@ void interactive_mode(void)
 	int status = -1;
 
 	do {
-		printf("hsh$ "); /* prompt */
-		line = readline()
+		printf("hsh$ ");
+		line = readline();
+		args = splitline(line);
+		status = exec_args(args);
 	
 	} while (status == -1) 
 }
