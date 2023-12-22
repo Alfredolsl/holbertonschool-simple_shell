@@ -22,7 +22,7 @@ int exec_args(char **args)
 		&own_env,
 		&own_exit
 	};
-	long unsigned int i = 0;
+	unsigned long int i = 0;
 
 	/* empty command was entered */
 	if (args[0] == NULL)

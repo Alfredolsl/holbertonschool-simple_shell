@@ -7,7 +7,7 @@
  * Return: -1 if successful, 0 if else
  */
 
-int own_cd(char **args)	
+int own_cd(char **args)
 {
 	if (args[1] == NULL)
 		fprintf(stderr, "expected argument to \"cd\"\n");
