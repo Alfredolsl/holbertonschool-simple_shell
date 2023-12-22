@@ -25,8 +25,7 @@ int forking(char **args)
 	else
 	{
 		/* parent process */
-		do
-		{
+		do {
 			waitpid(pid, &status, WUNTRACED);
 		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}

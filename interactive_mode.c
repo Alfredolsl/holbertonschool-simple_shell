@@ -20,6 +20,6 @@ void interactive_mode(void)
 
 		if (status >= 0)
 			exit(status);
-	
+
 	} while (status == -1);
 }

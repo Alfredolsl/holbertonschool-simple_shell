@@ -20,10 +20,9 @@ int exec_args(char **args)
 	int (*builtin_func[])(char **) = {
 		&own_cd,
 		&own_env,
-		&own_help,
 		&own_exit
 	};
-	long unsigned int i = 0;
+	unsigned long int i = 0;
 
 	/* empty command was entered */
 	if (args[0] == NULL)

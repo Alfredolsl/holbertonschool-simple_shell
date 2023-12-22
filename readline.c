@@ -3,6 +3,8 @@
 /**
  * readline - reads the line from stdin and
  * copies it into a buffer
+ *
+ * Return: copied line
  */
 
 char *readline(void)
