@@ -17,14 +17,14 @@ char **splitline(char *line)
 	/* if malloc fails */
 	if (!tokens)
 	{
-		frpintf(stderr, "allocation error in splitline.c: tokens\n");
+		fprintf(stderr, "allocation error in splitline.c: tokens\n");
 		exit(EXIT_FAILURE);
 	}
 
 	token = strtok(line, TOKEN_DELIMITER);
 	while (token != NULL)
 	{
-		if (token[0] = '#')
+		if (token[0] == '#')
 			break;
 
 		tokens[i] = token;
@@ -39,7 +39,7 @@ char **splitline(char *line)
 		/* if realloc fails */
 		if (!tokens)
 		{
-			frptinf(stderr, "reallocation error in splitline.c: tokens");
+			fprintf(stderr, "reallocation error in splitline.c: tokens");
 			exit(EXIT_FAILURE);
 		}
 		token = strtok(NULL, TOKEN_DELIMITER);

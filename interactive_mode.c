@@ -19,9 +19,7 @@ void interactive_mode(void)
 		free(args);
 
 		if (status >= 0)
-		{
 			exit(status);
-		}
 	
-	} while (status == -1) 
+	} while (status == -1);
 }
